@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.viewModelScope
@@ -29,10 +28,11 @@ class FragmentPlayOnline : Fragment() {
     ): View? {
         val binding = FragmentPlayOnlineBinding.inflate(inflater, container, false)
         binding.touchBlocker.setOnTouchListener { v, event -> true }
-        showDialog()
+        showMatchMakingDialog()
         binding.apply {
             newGameBtn.setOnClickListener {
                 viewmodel.newGame()
+                showMatchMakingDialog()
             }
             viewmodel.gameState.observe(viewLifecycleOwner) {
                 newGameBtn.visibility = if(it is GameState.Finished || it is GameState.Error) View.VISIBLE else View.GONE
@@ -138,7 +138,7 @@ class FragmentPlayOnline : Fragment() {
         return bindings
     }
 
-    private fun showDialog(){
+    private fun showMatchMakingDialog(){
        val dialog=  MaterialAlertDialogBuilder(requireContext()).apply {
            setTitle("Finding Match...")
 //           setIcon(R.drawable.play_arrow)
