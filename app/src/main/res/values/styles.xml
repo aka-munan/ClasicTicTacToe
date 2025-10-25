@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ShapeAppearanceOverlay">
+        <item name="cornerFamily">?attr/shapeCornerFamily</item>
+        <item name="cornerSize">0dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.Corner">
+        <item name="cornerFamily">?attr/shapeCornerFamily</item>
+        <item name="collapsedSize">4.dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.Corner.Medium">
+        <item name="cornerFamily">?attr/shapeCornerFamily</item>
+        <item name="cornerSize">8.dp</item>
+    </style>
+</resources>

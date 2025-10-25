@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.tictactoe.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_set_name"
+        android:name="com.tictactoe.ui.name.SetNameFragment"
+        android:label="@string/menu_set_name"
+        tools:layout="@layout/fragment_set_name" />
+    <fragment
+        android:id="@+id/nav_play_local"
+        android:name="com.tictactoe.ui.game.FragmentPlayLocal"
+        android:label="@string/menu_set_name"
+        tools:layout="@layout/fragment_set_name" />
+    <fragment
+        android:id="@+id/nav_play_online"
+        android:name="com.tictactoe.ui.game.FragmentPlayOnline"
+        android:label="@string/menu_set_name"
+        tools:layout="@layout/fragment_set_name" />
+
+
+</navigation>

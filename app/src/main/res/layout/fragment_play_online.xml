@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32.dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/card_info_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Tic Tac Toe"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="48.sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play the classic game with style"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="@color/design_default_color_secondary_variant" />
+
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_info_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8.dp"
+        app:cardBackgroundColor="?attr/colorSecondaryVariant"
+        app:layout_constraintBottom_toTopOf="@id/card_playground"
+        app:layout_constraintEnd_toEndOf="@id/card_playground"
+        app:layout_constraintStart_toStartOf="@id/card_playground"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Corner.Medium">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/info_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/x_turn"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="?attr/colorSurface" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                app:dividerColor="@color/grey_50"
+                android:layout_height="wrap_content" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:id="@+id/x"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:textColor="?attr/colorSurface"
+                    android:layout_height="wrap_content"
+                    android:text="X"
+                    app:layout_constraintEnd_toStartOf="@id/vert_divider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/player1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@id/x"
+                    app:layout_constraintStart_toStartOf="@id/x"
+                    app:layout_constraintTop_toBottomOf="@id/x"
+                    tools:text="You" />
+
+                <View
+                    android:id="@+id/vert_divider"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_50"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/o"
+                    app:layout_constraintStart_toEndOf="@id/x"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:id="@+id/o"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorSurface"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="O"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/vert_divider"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/player2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@id/o"
+                    app:layout_constraintStart_toStartOf="@id/o"
+                    app:layout_constraintTop_toBottomOf="@id/o"
+                    tools:text="opponent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_playground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardElevation="4.dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.7"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Corner.Medium">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/playground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" />
+
+            <View
+                android:id="@+id/touch_blocker"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/new_game_btn"
+        android:layout_width="0.dp"
+        android:layout_height="wrap_content"
+        android:text="New Game"
+        app:layout_constraintEnd_toEndOf="@id/card_playground"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/card_playground"
+        app:layout_constraintTop_toBottomOf="@id/card_playground" />
+</androidx.constraintlayout.widget.ConstraintLayout>
